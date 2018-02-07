@@ -1,5 +1,5 @@
 window.wxEval = {
-  userList:  ["周转","LEWIS",'<img class="emoji emoji1f331" text="_web" src="/zh_CN/htmledition/v2/images/spacer.gif" />'],
+  userList:  ["周转","邱应文",'she'],
   init: function(){
     var that = this
     this.contactFactory = angular.element(document.body).injector().get('contactFactory')
