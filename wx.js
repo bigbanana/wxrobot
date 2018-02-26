@@ -1,6 +1,5 @@
 window.wxEval = {
-  userList:  ["周转","邱应文",'she'],
-  init: function(){
+  init: function(messages){
     var that = this
     this.contactFactory = angular.element(document.body).injector().get('contactFactory')
     this.chatFactory = angular.element(document.body).injector().get('chatFactory')
@@ -23,10 +22,16 @@ window.wxEval = {
       if(!e.MMActualSender) return
       var cont = that.contactFactory.getContact(e.MMActualSender)
       console.log(cont.NickName+': '+e.Content)
-      if(!e.sendByLocal && that.userList.indexOf(cont.NickName) != -1){
-        that.chatFactory.setCurrentUserName(e.FromUserName)
-        that.msgScope.editAreaCtn = '<img class="qqemoji qqemoji79" text="[强]_web" src="/zh_CN/htmledition/v2/images/spacer.gif">'
-        that.msgScope.sendTextMessage()
+      if(!e.sendByLocal){
+        messages.forEach(item => {
+          if(e.Content.search(item.match) != -1){
+            if(!item.nickname || item.nickname == cont.NickName){
+              that.chatFactory.setCurrentUserName(e.FromUserName)
+              that.msgScope.editAreaCtn = item.reply
+              that.msgScope.sendTextMessage()
+            }
+          }
+        });
       }
     }
   }

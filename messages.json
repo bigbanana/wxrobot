@@ -1,0 +1,15 @@
+[
+  {
+    "match": "点赞",
+    "nickname": "乏味",
+    "reply": "<img class=\"qqemoji qqemoji79\" text=\"[强]_web\" src=\"/zh_CN/htmledition/v2/images/spacer.gif\">"
+  },
+  {
+    "match": "捂脸",
+    "reply": "<img class=\"qqemoji qqemoji106\" text=\"[捂脸]_web\" src=\"/zh_CN/htmledition/v2/images/spacer.gif\">"
+  },
+  {
+    "match": "你好吗",
+    "reply": "我很好啊，你呢？"
+  }
+]
